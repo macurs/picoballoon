@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Picoballoon")(type "KiCad")(uri "${KIPRJMOD}/Picoballoon.kicad_sym")(options "")(descr ""))
+)

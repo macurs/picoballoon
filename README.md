@@ -1,0 +1,1 @@
+PCB files made using KiCad 7.0

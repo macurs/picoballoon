@@ -2490,7 +2490,7 @@
     (property "Datasheet" " ~" (at 274.32 92.71 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Manufacturer_Part_Number" "73412-0110" (at 274.32 92.71 0)
+    (property "Manufacturer_Part_Number" "U.FL-R-SMT-1(10)" (at 274.32 92.71 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 20eea010-221e-437d-942a-cf2089e1a529))

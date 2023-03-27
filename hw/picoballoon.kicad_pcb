@@ -2305,7 +2305,7 @@
     (at 168 61.5 180)
     (descr "Hirose U.FL Coaxial https://www.hirose.com/product/en/products/U.FL/U.FL-R-SMT-1%2810%29/")
     (tags "Hirose U.FL Coaxial")
-    (property "Manufacturer_Part_Number" "73412-0110")
+    (property "Manufacturer_Part_Number" "U.FL-R-SMT-1(10)")
     (property "Sheetfile" "picoballoon.kicad_sch")
     (property "Sheetname" "")
     (property "ki_description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)")

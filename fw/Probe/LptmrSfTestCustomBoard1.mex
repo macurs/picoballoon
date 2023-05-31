@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<configuration name="K32L2B21xxxxA" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_13 http://mcuxpresso.nxp.com/XSD/mex_configuration_13.xsd" uuid="f6939644-5212-4be8-a858-37ae98e53545" version="13" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <common>
+      <processor>K32L2B21xxxxA</processor>
+      <package>K32L2B21VLH0A</package>
+      <mcu_data>ksdk2_0</mcu_data>
+      <cores selected="core0">
+         <core name="Cortex-M0P" id="core0" description="M0P core"/>
+      </cores>
+      <description>Configuration imported from LptmrSfTestCustomBoard1</description>
+   </common>
+   <preferences>
+      <validate_boot_init_only>true</validate_boot_init_only>
+      <generate_extended_information>false</generate_extended_information>
+      <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
+      <update_include_paths>true</update_include_paths>
+      <generate_registers_defines>false</generate_registers_defines>
+   </preferences>
+   <tools>
+      <pins name="Pins" version="13.1" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/pin_mux.c" update_enabled="true"/>
+            <file path="board/pin_mux.h" update_enabled="true"/>
+         </generated_project_files>
+         <pins_profile>
+            <processor_version>13.0.1</processor_version>
+            <pin_labels>
+               <pin_label pin_num="62" pin_signal="LCD_P45/ADC0_SE6b/PTD5/SPI1_SCK/UART2_TX/TPM0_CH5/FXIO0_D5" label="SENS_SCK" identifier="SF_SCK;SENS_SCK"/>
+               <pin_label pin_num="63" pin_signal="LCD_P46/ADC0_SE7b/PTD6/LLWU_P15/SPI1_MOSI/LPUART0_RX/SPI1_MISO/FXIO0_D6" label="SENS_MOSI" identifier="SF_MOSI;SENS_MOSI"/>
+               <pin_label pin_num="64" pin_signal="LCD_P47/PTD7/SPI1_MISO/LPUART0_TX/SPI1_MOSI/FXIO0_D7" label="SENS_MISO" identifier="SF_MISO;SENS_MISO"/>
+               <pin_label pin_num="61" pin_signal="LCD_P44/PTD4/LLWU_P14/SPI1_SS/UART2_RX/TPM0_CH4/FXIO0_D4" label="SENS_CS" identifier="SF_CS;SENS_CS"/>
+               <pin_label pin_num="49" pin_signal="VLL2/LCD_P4/PTC20" label="SF_ACK" identifier="SF_ACK"/>
+               <pin_label pin_num="54" pin_signal="LCD_P25/PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/CMP0_OUT" label="SF_SCK" identifier="SF_SCK"/>
+               <pin_label pin_num="55" pin_signal="LCD_P26/CMP0_IN0/PTC6/LLWU_P10/SPI0_MOSI/EXTRG_IN/SPI0_MISO" label="SF_MOSI" identifier="SF_MOSI"/>
+               <pin_label pin_num="56" pin_signal="LCD_P27/CMP0_IN1/PTC7/SPI0_MISO/USB_SOF_OUT/SPI0_MOSI" label="SF_MISO" identifier="SF_MISO"/>
+               <pin_label pin_num="53" pin_signal="LCD_P24/PTC4/LLWU_P8/SPI0_SS/LPUART1_TX/TPM0_CH3" label="SF_CS" identifier="SF_CS"/>
+               <pin_label pin_num="44" pin_signal="LCD_P21/ADC0_SE15/PTC1/LLWU_P6/RTC_CLKIN/I2C1_SCL/TPM0_CH0" label="SF_RESET" identifier="SF_RESET"/>
+               <pin_label pin_num="17" pin_signal="CMP0_IN5/ADC0_SE4b/PTE29/TPM0_CH2/TPM_CLKIN0" label="ADC_BATT" identifier="ADC_BATT"/>
+               <pin_label pin_num="60" pin_signal="LCD_P43/PTD3/SPI0_MISO/UART2_TX/TPM0_CH3/SPI0_MOSI/FXIO0_D3" label="GNSS_FIX" identifier="GNSS_FIX"/>
+               <pin_label pin_num="41" pin_signal="LCD_P14/PTB18/TPM2_CH0" label="GNSS_RESET" identifier="GNSS_RESET"/>
+               <pin_label pin_num="51" pin_signal="VCAP2/LCD_P6/PTC22" label="GNSS_WU" identifier="GNSS_WU"/>
+            </pin_labels>
+         </pins_profile>
+         <functions_list>
+            <function name="BOARD_InitPins">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>core0</coreID>
+                  <enableClock>true</enableClock>
+               </options>
+               <dependencies>
+                  <dependency resourceType="Peripheral" resourceId="SPI0" description="Peripheral SPI0 is not initialized" problem_level="1" source="Pins:BOARD_InitPins">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="Peripheral" resourceId="ADC0" description="Peripheral ADC0 is not initialized" problem_level="1" source="Pins:BOARD_InitPins">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="Peripheral" resourceId="SPI1" description="Peripheral SPI1 is not initialized" problem_level="1" source="Pins:BOARD_InitPins">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="Peripheral" resourceId="LPUART0" description="Peripheral LPUART0 is not initialized" problem_level="1" source="Pins:BOARD_InitPins">
+                     <feature name="initialized" evaluation="equal">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.port" description="Pins initialization requires the PORT Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.gpio" description="Pins initialization requires the GPIO Driver in the project." problem_level="2" source="Pins:BOARD_InitPins">
+                     <feature name="enabled" evaluation="equal" configuration="core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="SPI0" signal="SCK" pin_num="54" pin_signal="LCD_P25/PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/CMP0_OUT"/>
+                  <pin peripheral="SPI0" signal="MOSI" pin_num="55" pin_signal="LCD_P26/CMP0_IN0/PTC6/LLWU_P10/SPI0_MOSI/EXTRG_IN/SPI0_MISO"/>
+                  <pin peripheral="SPI0" signal="MISO" pin_num="56" pin_signal="LCD_P27/CMP0_IN1/PTC7/SPI0_MISO/USB_SOF_OUT/SPI0_MOSI"/>
+                  <pin peripheral="GPIOC" signal="GPIO, 4" pin_num="53" pin_signal="LCD_P24/PTC4/LLWU_P8/SPI0_SS/LPUART1_TX/TPM0_CH3">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIOC" signal="GPIO, 20" pin_num="49" pin_signal="VLL2/LCD_P4/PTC20">
+                     <pin_features>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIOC" signal="GPIO, 1" pin_num="44" pin_signal="LCD_P21/ADC0_SE15/PTC1/LLWU_P6/RTC_CLKIN/I2C1_SCL/TPM0_CH0">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                        <pin_feature name="drive_strength" value="low"/>
+                        <pin_feature name="pull_enable" value="enable"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC0" signal="SE, 4b" pin_num="17" pin_signal="CMP0_IN5/ADC0_SE4b/PTE29/TPM0_CH2/TPM_CLKIN0"/>
+                  <pin peripheral="GPIOD" signal="GPIO, 4" pin_num="61" pin_signal="LCD_P44/PTD4/LLWU_P14/SPI1_SS/UART2_RX/TPM0_CH4/FXIO0_D4">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SENS_CS"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SPI1" signal="SCK" pin_num="62" pin_signal="LCD_P45/ADC0_SE6b/PTD5/SPI1_SCK/UART2_TX/TPM0_CH5/FXIO0_D5">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SENS_SCK"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SPI1" signal="MOSI" pin_num="63" pin_signal="LCD_P46/ADC0_SE7b/PTD6/LLWU_P15/SPI1_MOSI/LPUART0_RX/SPI1_MISO/FXIO0_D6">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SENS_MOSI"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SPI1" signal="MISO" pin_num="64" pin_signal="LCD_P47/PTD7/SPI1_MISO/LPUART0_TX/SPI1_MOSI/FXIO0_D7">
+                     <pin_features>
+                        <pin_feature name="identifier" value="SENS_MISO"/>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPUART0" signal="RX" pin_num="39" pin_signal="LCD_P12/PTB16/SPI1_MOSI/LPUART0_RX/TPM_CLKIN0/SPI1_MISO"/>
+                  <pin peripheral="LPUART0" signal="TX" pin_num="40" pin_signal="LCD_P13/PTB17/SPI1_MISO/LPUART0_TX/TPM_CLKIN1/SPI1_MOSI"/>
+                  <pin peripheral="GPIOD" signal="GPIO, 3" pin_num="60" pin_signal="LCD_P43/PTD3/SPI0_MISO/UART2_TX/TPM0_CH3/SPI0_MOSI/FXIO0_D3">
+                     <pin_features>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIOB" signal="GPIO, 18" pin_num="41" pin_signal="LCD_P14/PTB18/TPM2_CH0">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
+                        <pin_feature name="pull_enable" value="enable"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="GPIOC" signal="GPIO, 22" pin_num="51" pin_signal="VCAP2/LCD_P6/PTC22">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="false"/>
+                     </pin_features>
+                  </pin>
+               </pins>
+            </function>
+         </functions_list>
+      </pins>
+      <clocks name="Clocks" version="11.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/clock_config.c" update_enabled="true"/>
+            <file path="board/clock_config.h" update_enabled="true"/>
+         </generated_project_files>
+         <clocks_profile>
+            <processor_version>13.0.1</processor_version>
+         </clocks_profile>
+         <clock_configurations>
+            <clock_configuration name="BOARD_BootClockRUN" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Clocks initialization requires the COMMON Driver in the project." problem_level="2" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="enabled" evaluation="equal" configuration="core0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources>
+                  <clock_source id="MCG.HIRC.outFreq" value="48 MHz" locked="false" enabled="false"/>
+               </clock_sources>
+               <clock_outputs>
+                  <clock_output id="Bus_clock.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="Core_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="Flash_clock.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPO_clock.outFreq" value="1 kHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART0CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MCGIRCLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MCGPCLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="System_clock.outFreq" value="48 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="MCGMode" value="HIRC" locked="false"/>
+                  <setting id="LPUART0ClkConfig" value="yes" locked="false"/>
+                  <setting id="MCG.CLKS.sel" value="MCG.HIRC" locked="false"/>
+                  <setting id="MCG_MC_HIRCEN_CFG" value="Enabled" locked="false"/>
+                  <setting id="SIM.LPUART0SRCSEL.sel" value="MCG.MCGPCLK" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>true</called_from_default_init>
+            </clock_configuration>
+         </clock_configurations>
+      </clocks>
+      <dcdx name="DCDx" version="3.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <dcdx_profile>
+            <processor_version>N/A</processor_version>
+         </dcdx_profile>
+         <dcdx_configurations/>
+      </dcdx>
+      <periphs name="Peripherals" version="12.0" enabled="true" update_project_code="true">
+         <dependencies>
+            <dependency resourceType="SWComponent" resourceId="platform.drivers.spi" description="SPI Driver not found in the toolchain/IDE project. Project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.drivers.spi" description="Unsupported version of the SPI Driver in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. Project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="greaterOrEqual">
+                  <data type="Version">2.0.4</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.drivers.lpuart" description="LPUART Driver not found in the toolchain/IDE project. Project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.drivers.lpuart" description="Unsupported version of the LPUART Driver in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. Project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">2.5.1</data>
+               </feature>
+            </dependency>
+         </dependencies>
+         <generated_project_files>
+            <file path="board/peripherals.c" update_enabled="true"/>
+            <file path="board/peripherals.h" update_enabled="true"/>
+         </generated_project_files>
+         <peripherals_profile>
+            <processor_version>13.0.1</processor_version>
+         </peripherals_profile>
+         <functional_groups>
+            <functional_group name="BOARD_InitPeripherals" uuid="29aa1b1c-6280-4c24-a2a1-f4428eb2b81c" called_from_default_init="true" id_prefix="" core="core0">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SPI0.spi_miso" description="Signal master data in, slave data out is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SPI0.spi_mosi" description="Signal master data out, slave data in is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SPI0.spi_sck" description="Signal serial clock is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SPI0.spi_ss0" description="Signal slave select is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="ClockOutput" resourceId="Bus_clock" description="Bus clock is inactive." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="frequency" evaluation="greaterThan">
+                        <data type="Frequency" unit="Hz">0</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SPI1.spi_miso" description="Signal master data in, slave data out is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SPI1.spi_mosi" description="Signal master data out, slave data in is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SPI1.spi_sck" description="Signal serial clock is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="SPI1.spi_ss0" description="Signal slave select is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="ClockOutput" resourceId="System_clock" description="System clock is inactive." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="frequency" evaluation="greaterThan">
+                        <data type="Frequency" unit="Hz">0</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="ClockOutput" resourceId="LPUART0CLK" description="LPUART0 clock is inactive." problem_level="2" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="frequency" evaluation="greaterThan">
+                        <data type="Frequency" unit="Hz">0</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="LPUART0.uart_tx" description="Signal TX is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="equal">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="LPUART0.uart_rx" description="Signal RX is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="equal">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <instances>
+                  <instance name="NVIC" uuid="f279d072-55d3-42b7-9c05-e1eea12352b8" type="nvic" type_id="nvic_57b5eef3774cc60acaede6f5b8bddc67" mode="general" peripheral="NVIC" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="nvic">
+                        <array name="interrupt_table"/>
+                        <array name="interrupts"/>
+                     </config_set>
+                  </instance>
+                  <instance name="SF_SPI" uuid="683fae20-fbe4-48b4-a032-f63a0364ddfc" type="spi" type_id="spi_672b694426b0a10a1d774659ee8f8435" mode="SPI_Polling" peripheral="SPI0" enabled="true" comment="" custom_name_enabled="true" editing_lock="false">
+                     <config_set name="fsl_spi">
+                        <setting name="spi_mode" value="kSPI_Master"/>
+                        <setting name="clockSource" value="BusInterfaceClock"/>
+                        <setting name="clockSourceFreq" value="GetFreq"/>
+                        <struct name="spi_master_config">
+                           <setting name="enableMaster" value="true"/>
+                           <setting name="enableStopInWaitMode" value="false"/>
+                           <setting name="polarity" value="kSPI_ClockPolarityActiveHigh"/>
+                           <setting name="phase" value="kSPI_ClockPhaseSecondEdge"/>
+                           <setting name="direction" value="kSPI_MsbFirst"/>
+                           <setting name="dataMode" value="kSPI_8BitMode"/>
+                           <setting name="outputMode" value="kSPI_SlaveSelectAsGpio"/>
+                           <setting name="pinMode" value="kSPI_PinModeNormal"/>
+                           <setting name="baudRate_Bps" value="125000"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="SENS_SPI" uuid="ac10f58c-4539-4cc0-b4f8-b48bcf46adb8" type="spi" type_id="spi_672b694426b0a10a1d774659ee8f8435" mode="SPI_Polling" peripheral="SPI1" enabled="true" comment="" custom_name_enabled="true" editing_lock="false">
+                     <config_set name="fsl_spi">
+                        <setting name="spi_mode" value="kSPI_Master"/>
+                        <setting name="clockSource" value="BusInterfaceClock"/>
+                        <setting name="clockSourceFreq" value="GetFreq"/>
+                        <struct name="spi_master_config">
+                           <setting name="enableMaster" value="true"/>
+                           <setting name="enableStopInWaitMode" value="false"/>
+                           <setting name="polarity" value="kSPI_ClockPolarityActiveHigh"/>
+                           <setting name="phase" value="kSPI_ClockPhaseFirstEdge"/>
+                           <setting name="direction" value="kSPI_MsbFirst"/>
+                           <setting name="dataMode" value="kSPI_8BitMode"/>
+                           <setting name="txWatermark" value="kSPI_TxFifoOneHalfEmpty"/>
+                           <setting name="rxWatermark" value="kSPI_RxFifoThreeFourthsFull"/>
+                           <setting name="outputMode" value="kSPI_SlaveSelectAsGpio"/>
+                           <setting name="pinMode" value="kSPI_PinModeNormal"/>
+                           <setting name="baudRate_Bps" value="1000000"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="LPUART0" uuid="9a9d496a-63ae-4bf1-a0f9-10bcf19b7e80" type="lpuart" type_id="lpuart_bf01db7d964092f3cf860852cba17f7e" mode="polling" peripheral="LPUART0" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="lpuartConfig_t" quick_selection="QuickSelection5">
+                        <struct name="lpuartConfig">
+                           <setting name="clockSource" value="LpuartClock"/>
+                           <setting name="lpuartSrcClkFreq" value="ClocksTool_DefaultInit"/>
+                           <setting name="baudRate_Bps" value="9600"/>
+                           <setting name="parityMode" value="kLPUART_ParityDisabled"/>
+                           <setting name="dataBitsCount" value="kLPUART_EightDataBits"/>
+                           <setting name="isMsb" value="false"/>
+                           <setting name="stopBitCount" value="kLPUART_OneStopBit"/>
+                           <setting name="enableMatchAddress1" value="false"/>
+                           <setting name="matchAddress1" value="0"/>
+                           <setting name="enableMatchAddress2" value="false"/>
+                           <setting name="matchAddress2" value="0"/>
+                           <setting name="rxIdleType" value="kLPUART_IdleTypeStartBit"/>
+                           <setting name="rxIdleConfig" value="kLPUART_IdleCharacter1"/>
+                           <setting name="enableTx" value="true"/>
+                           <setting name="enableRx" value="true"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+               </instances>
+            </functional_group>
+         </functional_groups>
+         <components>
+            <component name="system" uuid="e53fb729-a1af-458f-a211-4faafe25b97e" type_id="system_54b53072540eeeb8f8e9343e71f28176">
+               <config_set_global name="global_system_definitions">
+                  <setting name="user_definitions" value=""/>
+                  <setting name="user_includes" value=""/>
+               </config_set_global>
+            </component>
+            <component name="uart_cmsis_common" uuid="4be337b6-9677-4050-94f7-994e1928ffbb" type_id="uart_cmsis_common_9cb8e302497aa696fdbb5a4fd622c2a8">
+               <config_set_global name="global_USART_CMSIS_common" quick_selection="default"/>
+            </component>
+            <component name="msg" uuid="a93d2019-bc4d-4b16-9ae5-33f443f31c13" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
+               <config_set_global name="global_messages"/>
+            </component>
+            <component name="gpio_adapter_common" uuid="eab7cacc-b160-449d-9cf7-b4a62a5f4e4c" type_id="gpio_adapter_common_57579b9ac814fe26bf95df0a384c36b6">
+               <config_set_global name="global_gpio_adapter_common" quick_selection="default"/>
+            </component>
+            <component name="generic_uart" uuid="50a91f45-f2af-467c-9490-fa12ad11f4b6" type_id="generic_uart_8cae00565451cf2346eb1b8c624e73a6">
+               <config_set_global name="global_uart"/>
+            </component>
+            <component name="generic_enet" uuid="d172ec33-9606-47b4-ac5c-6aacdcbddf55" type_id="generic_enet_74db5c914f0ddbe47d86af40cb77a619">
+               <config_set_global name="global_enet"/>
+            </component>
+            <component name="generic_can" uuid="d47cd906-cf74-4047-b9f4-ff90e026c4b5" type_id="generic_can_1bfdd78b1af214566c1f23cf6a582d80">
+               <config_set_global name="global_can"/>
+            </component>
+         </components>
+      </periphs>
+      <tee name="TEE" version="4.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <tee_profile>
+            <processor_version>N/A</processor_version>
+         </tee_profile>
+      </tee>
+   </tools>
+</configuration>
